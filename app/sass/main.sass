@@ -1,0 +1,718 @@
+@import "smartgrid"
++reset
+
+@import "vars"
+@import "fonts"
+@import "libs"
+//**************************************************************
+.wrapper
+	+wrapper
+
+.top-section
+	height: 100vh
+	@media screen and (max-height: 450px)
+		height: auto
+	.bg-wrap
+		display: flex
+		flex-direction: column
+		height: 100%
+		background-position: center 0
+		background-size: cover
+		position: relative
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			background-color: rgba(0, 0, 0, 0.35)
+
+.main-head, .bottom-line, .main-footer
+	height: 100px
+	background-color: rgba(0,0,0,.7)
+	position: relative
+	z-index: 1
+	.logo
+		width: 90px
+	.row
+		display: flex
+		align-items: center
+		.logo-wrap
+			&-item
+				display: inline-block
+				vertical-align: middle
+				.desc
+					font-size: 16px
+					+sm-block
+						display: none
+			&-logo
+				font-size: 30px
+				font-weight: 700
+				margin-right: 15px
+				color: #fff
+				+md-block
+					font-size: 24px
+		.phone-wrap
+			margin-left: auto
+			text-align: right
+			display: flex
+			&-icon
+				margin-right: 10px
+				+sm-block
+					width: 18px
+			&-phone
+				margin-bottom: 6px
+				font-weight: 400
+				+sm-block
+					font-size: 14px
+			.callback-link
+				color: rgba(235, 235, 235, 0.45)
+				font-size: 13px
+				text-decoration: underline dotted
+				transition: color .25s ease
+				background-color: transparent
+				border: none
+				cursor: pointer
+				outline: none
+				&:hover
+					color: rgba(235, 235, 235, 0.75)
+.bottom-line
+	margin-top: auto
+	height: auto
+	padding: 15px 0
+	.row
+		+row-flex()
+		justify-content: space-around
+		.item
+			+col()
+			+size(7)
+			+size-md(10)
+			+size-sm(12)
+			font-size: 13px
+			+xs-block
+				font-size: 11px
+			display: flex
+			align-items: center
+			letter-spacing: 1px
+			&-icon
+				max-width: 18px
+				min-width: 18px
+				margin-right: 10px
+				img
+					display: block
+			&-icon.alarm
+				max-width: 20px
+				min-width: 20px
+
+.middle-content
+	position: relative
+	margin-top: auto
+	z-index: 1
+	.main
+		margin-bottom: 100px
+		padding-left: 40px
+		position: relative
+		@media screen and (max-height: 450px)
+			margin-top: 40px
+			margin-bottom: 50px
+		.h1
+			+sm-block
+				font-size: 38px
+		.desc
+			+sm-block
+				font-size: 18px
+		>span
+			display: block
+			position: absolute
+			width: 1px
+			height: 150%
+			top: -23px
+			left: 0
+			background-color: #fff
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				width: 30px
+				height: 1px
+				background-color: #fff
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				width: 130px
+				height: 1px
+				bottom: 0
+				background-color: #fff
+	.row
+		max-width: 800px
+		margin: auto
+		.description
+			font-weight: 700
+			font-style: italic
+			text-align: right
+			span
+				display: inline-block
+				padding: 12px 20px 24px 40px
+				background-color: rgba(0, 0, 0, 0.81)
+				position: relative
+				&:after
+					content: ''
+					display: block
+					width: 135px
+					height: 2px
+					background-color: $accent2
+					position: absolute
+					right: 20px
+					bottom: 15px
+
+
+//about section*************************************************************
+.section-about
+	.row
+		+row-flex()
+		align-items: center
+		justify-content: center
+		.side
+			+col()
+			+size(12)
+		.side-left
+			+size-xs(22)
+			text-align: left
+			padding-right: 15px
+			+sm-block
+				font-size: 14px
+			p:first-child
+				margin-bottom: 15px
+		.side-right
+			text-align: right
+			+xs-block
+				display: none
+			img
+				max-width: 100%
+				&:hover
+					transform: scale(1.05)
+//section why*************************************************************
+.section-why
+	.row
+		+row-flex()
+		justify-content: center
+		.item
+			+col
+			+size(6)
+			+size-md(9)
+			+size-sm(10)
+			+size-xs(15)
+			+size-xxs(20)
+			display: flex
+			flex-direction: column
+			align-items: center
+			+md-block
+				margin-bottom: 20px
+			padding: 30px 15px
+			border: 1px $dark-color solid
+			color: $dark-color
+			top: 0
+			transition: top .25s ease, box-shadow .25s ease
+			position: relative
+			img
+				margin-bottom: 30px
+				width: 60px
+				height: 62px
+			&:hover
+				box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.65)
+				top: -10px
+			span
+				margin-bottom: auto
+
+//section otzyv**********************************************************
+.section-otzyv
+  .row
+    +row-flex
+    justify-content: center
+		.item
+			+col
+			+size(6)
+			img
+				display: block
+				margin: auto
+				margin-bottom: 20px
+				width: 100px
+				border: 2px solid #fff
+				border-radius: 50%
+			.client-name
+				display: block
+				font-weight: 400
+				margin-bottom: 20px
+			.client-comment
+				font-size: 13px
+				font-weight: 100
+
+.slick-arrow
+	width: 30px
+	height: 30px
+	padding: 5px
+	background-color: rgba(255, 255, 255, 0.81)
+	border-radius: 50%
+	position: absolute
+	top: 50%
+	left: -40px
+	font-size: 20px
+	cursor: pointer
+	&:hover
+		background-color: #fff
+	&:before
+		position: absolute
+		top: 5px
+		left: 9px
+		color: $dark-bg
+	&.fa-angle-right
+		left: initial
+		right: -40px
+		&:before
+			top: 5px
+			right: 8px
+//section write-us**********************************************************
+.section-write-us
+	position: relative
+	z-index: 0
+	+sm-block
+		background-size: cover
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: rgba(0, 0, 0, 0.8)
+	.trapetcia
+		position: absolute
+		top: 0
+		right: 0
+		z-index: 0
+		//width: 100%
+		display: block
+	.callback
+		max-width: 945px
+		margin: auto
+		text-align: right
+		padding: 0 30px
+		+xs-block
+			padding: 0
+		border-radius: 3px
+		position: relative
+		z-index: 1
+		&-inputs
+			display: flex
+			flex-wrap: wrap
+			text-align: left
+			font-size: 13px
+			color: $color
+		.success
+			display: none
+			//text-align: center
+			font-size: 20px
+			font-weight: 500
+			color: #2bf47c
+			margin-bottom: 20px
+			&.visible
+				display: flex
+				justify-content: center
+		.left, .right
+			flex-grow: 1
+			flex-basis: 300px
+			+sm-block
+				flex-basis: 500px
+		.left
+			margin-right: 30px
+			+sm-block
+				margin-right: 0
+		.right
+			display: flex
+			flex-direction: column
+			+sm-block
+				margin-top: 24px
+		input, textarea
+			display: block
+			background-color: transparent
+			border: 1px solid darken($color, 30%)
+			outline: none
+			width: 100%
+			border-radius: 3px
+			padding: 14px 10px
+			color: $color
+			&:focus
+				border-color: $color
+			&::placeholder
+				letter-spacing: 1px
+				color: lighten($dark-color, 60%)
+		textarea
+			flex-grow: 1
+			resize: none
+			+sm-block
+				min-height: 200px
+		input
+			margin-bottom: 24px
+			&:last-child
+				margin-bottom: 0
+		label
+			display: block
+			margin-bottom: 10px
+			letter-spacing: 1px
+			line-height: 1
+			font-weight: 400
+			span
+				color: $accent2
+				font-size: 16px
+		&-button
+			margin-top: 30px
+			text-align: right
+			+xs-block
+				text-align: left
+			.text
+				text-align: left
+				color: lighten($dark-color, 50%)
+				font-size: 13px
+				max-width: 700px
+				margin-bottom: 27px
+				+sm-block
+					font-size: 11px
+				.checkbox-confidential
+					.apply-text, .apply-checkbox
+						display: inline-block
+						font-weight: 200
+						vertical-align: top
+					.apply-checkbox
+						width: auto
+						margin: 3px 10px 10px 0
+						line-height: 1.4
+						text-align: left
+					.apply-text
+						width: calc(92% - 30px)
+						line-height: 1.4
+					a
+						color: $color
+						text-decoration: underline
+						cursor: pointer
+			.desc
+				letter-spacing: 1px
+				margin-bottom: 20px
+				font-size: 13px
+				font-weight: 300
+				color: $color
+				+xxs-block
+					font-size: 11px
+				span
+					color: $accent2
+					font-size: 16px
+			.button
+				color: #fff
+				font-size: 13px
+				padding: 14px 20px
+				border: none
+				border-radius: 3px
+				text-transform: uppercase
+				background-color: $accent2
+				transition: background-color .15s ease
+				cursor: pointer
+				&:hover
+					background-color: lighten($accent2, 7%)
+				&.disabled
+					background-color: #9f9f9f
+					cursor: default
+
+//section contacts**************************************************************************
+.section-contacts
+	.row
+		+row-flex
+		justify-content: center
+		.item
+			+col
+			+size(7)
+			+size-sm(11)
+			+size-xs(18)
+			+sm-block
+				margin-bottom: 15px
+			+xs-block
+				text-align: left
+			color: $dark-color
+			font-size: 13px
+			text-align: center
+			&:first-child
+				img
+					min-width: 20px
+					max-width: 20px
+				span
+					width: 80%
+			&:last-child
+				+sm-block
+					margin-bottom: 0
+			&-content
+				width: auto
+				margin: auto
+				display: inline-block
+				text-align: left
+				>img, >span
+					display: inline-block
+					vertical-align: top
+			img
+				min-width: 25px
+				max-width: 25px
+				margin-right: 10px
+			.phones
+				display: inline-block
+				vertical-align: top
+				span
+					display: block
+					&:first-child
+						margin-bottom: 7px
+	.map
+		min-height: 300px
+		margin-top: 30px
+		border: 1px solid $dark-color
+//footer*****************************************************************************
+.main-footer
+	background-color: $dark-bg
+
+//404****************************************************************************
+.section-404
+	//height: 100vh
+	img
+		margin: auto
+		display: block
+
+
+//popup*********************************************************
+//popup*********************************************************
+.popup-form
+	position: relative
+	margin: auto
+	max-width: 300px
+	background-color: lighten($dark-bg, 3%)
+	padding: 40px 20px
+	h3
+		text-align: center
+		margin-bottom: 30px
+	label, input
+		display: block
+		width: 100%
+	label
+		margin-bottom: 20px
+		span
+			display: block
+			font-size: 15px
+			color: #999
+			margin-bottom: 5px
+	input
+		border: none
+		padding: 10px 15px
+		border-radius: 3px
+		font-size: 12px
+		background-color: $dark-color
+		color: #999
+	.button
+		margin-top: 35px
+		padding: 9px 15px
+		background-color: $accent2
+		color: #fff
+		text-transform: uppercase
+		border-radius: 3px
+		border: none
+		transition: background-color .15s ease
+		cursor: pointer
+		&:hover
+			background-color: lighten($accent2, 7%)
+		&.disabled
+			background-color: #9f9f9f
+			cursor: default
+	.mfp-close
+		color: #999
+	.checkbox-confidential
+		color: lighten($dark-color, 60%)
+		font-size: 12px
+		margin-top: 25px
+		.apply-text, .apply-checkbox
+			display: inline-block
+			font-weight: 200
+			vertical-align: top
+		.apply-checkbox
+			width: auto
+			margin: 3px 10px 10px 0
+			line-height: 1.4
+			text-align: left
+		.apply-text
+			width: calc(92% - 30px)
+			line-height: 1.4
+		a
+			color: lighten(#999, 30%)
+			text-decoration: underline
+			cursor: pointer
+
+	.success
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		text-align: center
+		background-color: #fff
+		color: $dark-color
+		z-index: 2
+		padding: 15px
+		text-transform: uppercase
+		h4
+			font-weight: 500
+			margin-bottom: 30px
+			font-size: 20px
+		p
+			font-size: 16px
+		&.visible
+			display: flex
+			justify-content: center
+			flex-direction: column
+//confident-popup**************************************************************
+//confident-popup**************************************************************
+.confident-popup
+	padding: 20px
+	padding-right: 0
+	background-color: $dark-bg
+	margin: auto
+	max-width: 800px
+	font-size: 14px
+	font-weight: 300
+	.article-title
+		text-align: center
+		margin-bottom: 30px
+		font-size: 18px
+		font-weight: 400
+	.article-text
+		padding-right: 10px
+		overflow-y: scroll
+		max-height: 400px
+		.h4
+			margin-top: 20px
+			margin-bottom: 20px
+		p
+			font-weight: 200
+//basic*********************************************************
+//basic*********************************************************
+*
+	box-sizing: border-box
+body
+	color: #fff
+	font-size: 16px
+	font-family: $gotham
+	font-weight: 300
+	overflow-x: hidden
+.section
+	padding: 70px 0
+	background-color: #fff
+	text-align: center
+	+sm-block
+		padding: 40px 0
+	&.dark
+		background-color: $dark-bg
+.h1
+	font-size: 55px
+	font-weight: 700
+	color: $accent2
+	margin-bottom: 10px
+.h2
+	display: inline-block
+	margin-bottom: 50px
+	padding-bottom: 15px
+	font-size: 30px
+	+sm-block
+		font-size: 22px
+		margin-bottom: 30px
+	text-align: center
+	font-weight: 500
+	text-transform: uppercase
+	color: $color
+	position: relative
+	z-index: 1
+	&.dark
+		color: $dark-color
+		&:before
+			background-color: $dark-color
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		width: 120%
+		height: 2px
+		background-color: $color
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+.h4
+	font-weight: 400
+.desc
+	font-size: 20px
+	font-weight: 400
+	max-width: 350px
+
+.height100
+	height: inherit
+.hidden
+	display: none
+.text-center
+	text-align: center
+
+//checkbox*****************
+.check
+	display: inline-block
+	cursor: pointer
+	position: relative
+	width: 18px
+	height: 18px
+	-webkit-tap-highlight-color: transparent
+	transform: translate3d(0,0,0)
+	&:before
+		content: ""
+		position: absolute
+		top: -15px
+		left: -15px
+		width: 48px
+		height: 48px
+		border-radius: 50%
+		background: rgba(#223254,.03)
+		opacity: 0
+		transition: opacity .2s ease
+	svg
+		position: relative
+		z-index: 1
+		fill: none
+		stroke-linecap: round
+		stroke-linejoin: round
+		stroke: #C8CCD4
+		stroke-width: 1.5
+		transform: translate3d(0,0,0)
+		transition: all .2s ease
+		path
+			stroke-dasharray: 60
+			stroke-dashoffset: 0
+		polyline
+			stroke-dasharray: 22
+			stroke-dashoffset: 66
+	&:hover
+		&:before
+			opacity: 1
+		svg
+			stroke: #3df48a
+
+#cbx:checked + .check, #cbx2:checked + .check
+	svg
+		stroke: #3df48a
+		path
+			stroke-dashoffset: 60
+			transition: all .3s linear
+		polyline
+			stroke-dashoffset: 42
+			transition: all .2s linear
+			transition-delay: .15s
+
